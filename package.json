@@ -1,14 +1,11 @@
 {
-  "name": "hello-reason",
+  "name": "graphql-reason-mongo",
   "version": "0.1.0",
-  "description": "Reason workflow with Esy",
-  "license": "MIT",
   "esy": {
     "build": "refmterr dune build -p #{self.name}",
-    "NOTE": "Optional release Section. Customizes result of `esy release`",
     "release": {
       "releasedBinaries": [
-        "Hello.exe"
+        "Server"
       ],
       "deleteFromBinaryRelease": [
         "*esy_ocaml_*",
@@ -20,10 +17,13 @@
   "dependencies": {
     "@opam/dune": "*",
     "@opam/lambda-term": "*",
-    "@opam/lwt": "*",
+    "@opam/lwt": "<4.0.0",
+    "@opam/lwt_camlp4": "<4.0.0",
     "@esy-ocaml/reason": "*",
     "refmterr": "*",
-    "ocaml": "~4.6.0"
+    "ocaml": "<4.6.0",
+    "@opam/graphql-lwt": "0.7.0",
+    "@opam/mongo": "0.67.2"
   },
   "resolutions": {
     "@esy-ocaml/esy-installer": "0.0.1",
@@ -32,6 +32,6 @@
   },
   "devDependencies": {
     "@esy-ocaml/merlin": "*",
-    "ocaml": "~4.6.0"
+    "ocaml": "<4.6.0"
   }
 }

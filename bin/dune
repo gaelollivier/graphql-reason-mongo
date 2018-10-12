@@ -1,4 +1,4 @@
 (executable
-  (name Hello)
-  (public_name Hello.exe)
+  (name Bin)
+  (public_name Server)
   (libraries lib))
