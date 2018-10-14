@@ -15,23 +15,23 @@
     }
   },
   "dependencies": {
+    "ocaml": "4.7.1",
     "@opam/dune": "*",
     "@opam/lambda-term": "*",
-    "@opam/lwt": "<4.0.0",
-    "@opam/lwt_camlp4": "<4.0.0",
+    "@opam/lwt": "*",
     "@esy-ocaml/reason": "*",
     "refmterr": "*",
-    "ocaml": "<4.6.0",
-    "@opam/graphql-lwt": "0.7.0",
-    "@opam/mongo": "0.67.2"
+    "@opam/graphql-lwt": "*",
+    "@opam/mongo": "*",
+    "@opam/bson": "*"
   },
   "resolutions": {
-    "@esy-ocaml/esy-installer": "0.0.1",
-    "@opam/menhir": "20171013",
-    "@opam/re": "1.8.0"
+    "@esy-ocaml/reason": "anmonteiro/reason#anmonteiro/dune-1.4",
+    "@opam/mongo": "anmonteiro/mongo#dunify",
+    "@opam/bson": "anmonteiro/bson#dunify"
   },
   "devDependencies": {
     "@esy-ocaml/merlin": "*",
-    "ocaml": "<4.6.0"
+    "ocaml": "4.7.1"
   }
 }

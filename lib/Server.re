@@ -4,6 +4,7 @@ open Graphql_lwt;
 let usersCollection = Mongo.create_local_default("db", "users");
 
 type user = {
+  id: string,
   email: string,
   firstname: string,
   lastname: string,
@@ -14,6 +15,9 @@ let user =
   Schema.(
     obj("User", ~fields=user =>
       [
+        field("id", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), p) =>
+          p.id
+        ),
         field("email", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), p) =>
           p.email
         ),
@@ -47,6 +51,7 @@ let schema =
                let profile =
                  doc |> Bson.get_element("profile") |> Bson.get_doc_element;
                {
+                 id: Bson.get_element("_id", doc) |> Bson.get_objectId,
                  email: Bson.get_element("email", doc) |> Bson.get_string,
                  firstname:
                    profile |> Bson.get_element("firstname") |> Bson.get_string,
