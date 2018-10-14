@@ -10,12 +10,17 @@ type user = {
   lastname: string,
 };
 
+let objectId =
+  Schema.scalar(~doc="MongoDB object ID", "ObjectId", ~coerce=(id: string)
+    /* format ObjectIDs as hexadecimal */
+    => `String(Hex.show(Hex.of_string(id))));
+
 /* GraphQL User schema */
 let user =
   Schema.(
     obj("User", ~fields=user =>
       [
-        field("id", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), p) =>
+        field("id", ~args=Arg.[], ~typ=non_null(objectId), ~resolve=((), p) =>
           p.id
         ),
         field("email", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), p) =>

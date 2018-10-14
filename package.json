@@ -22,13 +22,14 @@
     "@esy-ocaml/reason": "*",
     "refmterr": "*",
     "@opam/graphql-lwt": "*",
-    "@opam/mongo": "*",
-    "@opam/bson": "*"
+    "@opam/mongo-lwt": "*",
+    "@opam/bson": "*",
+    "@opam/hex": "*"
   },
   "resolutions": {
     "@esy-ocaml/reason": "anmonteiro/reason#anmonteiro/dune-1.4",
-    "@opam/mongo": "anmonteiro/mongo#dunify",
-    "@opam/bson": "gaelduplessix/bson:bson.opam#fix-object-id-decoding"
+    "@opam/mongo-lwt": "anmonteiro/mongo:mongo-lwt.opam#dunify",
+    "@opam/bson": "gaelduplessix/bson#master"
   },
   "devDependencies": {
     "@esy-ocaml/merlin": "*",

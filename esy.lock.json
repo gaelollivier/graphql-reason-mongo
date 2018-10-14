@@ -1,5 +1,5 @@
 {
-  "hash": "0fcd33611d6dfdb0647805301094571a",
+  "hash": "9e7b63551c0c9b3abe0bd4e370dd737e",
   "root": "root@path:./package.json",
   "node": {
     "root@path:./package.json": {
@@ -13,11 +13,12 @@
       "dependencies": [
         "@esy-ocaml/merlin@3.0.5005",
         "@esy-ocaml/reason@github:anmonteiro/reason#anmonteiro/dune-1.4",
-        "@opam/bson@github:gaelduplessix/bson:bson.opam#fix-object-id-decoding",
+        "@opam/bson@github:gaelduplessix/bson#master",
         "@opam/dune@opam:1.4.0", "@opam/graphql-lwt@opam:0.7.0",
-        "@opam/lambda-term@opam:1.13", "@opam/lwt@opam:4.1.0",
-        "@opam/mongo@github:anmonteiro/mongo#dunify", "ocaml@4.7.1",
-        "refmterr@3.1.7"
+        "@opam/hex@opam:1.2.0", "@opam/lambda-term@opam:1.13",
+        "@opam/lwt@opam:4.1.0",
+        "@opam/mongo-lwt@github:anmonteiro/mongo:mongo-lwt.opam#dunify",
+        "ocaml@4.7.1", "refmterr@3.1.7"
       ]
     },
     "refmterr@3.1.7": {
@@ -104,7 +105,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
-        "@opam/ocamlfind@opam:1.8.0", "@opam/topkg@opam:0.9.1",
+        "@opam/ocamlfind@opam:1.8.0", "@opam/topkg@opam:1.0.0",
         "@opam/uchar@opam:0.0.2", "ocaml@4.7.1"
       ]
     },
@@ -188,18 +189,18 @@
         "ocaml@4.7.1"
       ]
     },
-    "@opam/topkg@opam:0.9.1": {
+    "@opam/topkg@opam:1.0.0": {
       "record": {
         "name": "@opam/topkg",
-        "version": "opam:0.9.1",
+        "version": "opam:1.0.0",
         "source":
-          "archive:http://erratique.ch/software/topkg/releases/topkg-0.9.1.tbz#md5:8978a0595db1a22e4251ec62735d4b84",
+          "archive:http://erratique.ch/software/topkg/releases/topkg-1.0.0.tbz#md5:e3d76bda06bf68cb5853caf6627da603",
         "files": [],
         "opam": {
           "name": "topkg",
-          "version": "0.9.1",
+          "version": "1.0.0",
           "opam":
-            "opam-version: \"2.0\"\nname: \"topkg\"\nversion: \"0.9.1\"\nsynopsis: \"The transitory OCaml software packager\"\ndescription: \"\"\"\nTopkg is a packager for distributing OCaml software. It provides an\nAPI to describe the files a package installs in a given build\nconfiguration and to specify information about the package's\ndistribution, creation and publication procedures.\n\nThe optional topkg-care package provides the `topkg` command line tool\nwhich helps with various aspects of a package's life cycle: creating\nand linting a distribution, releasing it on the WWW, publish its\ndocumentation, add it to the OCaml opam repository, etc.\n\nTopkg is distributed under the ISC license and has **no**\ndependencies. This is what your packages will need as a *build*\ndependency.\n\nTopkg-care is distributed under the ISC license it depends on\n[fmt][fmt], [logs][logs], [bos][bos], [cmdliner][cmdliner],\n[webbrowser][webbrowser] and `opam-format`.\n\n[fmt]: http://erratique.ch/software/fmt\n[logs]: http://erratique.ch/software/logs\n[bos]: http://erratique.ch/software/bos\n[cmdliner]: http://erratique.ch/software/cmdliner\n[webbrowser]: http://erratique.ch/software/webbrowser\"\"\"\nmaintainer: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nauthors: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nlicense: \"ISC\"\ntags: [\"packaging\" \"ocamlbuild\" \"org:erratique\"]\nhomepage: \"http://erratique.ch/software/topkg\"\ndoc: \"http://erratique.ch/software/topkg/doc\"\nbug-reports: \"https://github.com/dbuenzli/topkg/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.01.0\"}\n  \"ocamlfind\" {build & >= \"1.6.1\"}\n  \"ocamlbuild\"\n  \"result\"\n]\nbuild: [\n  \"ocaml\" \"pkg/pkg.ml\" \"build\" \"--pkg-name\" name \"--dev-pkg\" \"%{pinned}%\"\n]\ndev-repo: \"git+http://erratique.ch/repos/topkg.git\"\nurl {\n  src: \"http://erratique.ch/software/topkg/releases/topkg-0.9.1.tbz\"\n  checksum: \"md5=8978a0595db1a22e4251ec62735d4b84\"\n}",
+            "opam-version: \"2.0\"\nname: \"topkg\"\nversion: \"1.0.0\"\nsynopsis: \"The transitory OCaml software packager\"\ndescription: \"\"\"\nTopkg is a packager for distributing OCaml software. It provides an\nAPI to describe the files a package installs in a given build\nconfiguration and to specify information about the package's\ndistribution, creation and publication procedures.\n\nThe optional topkg-care package provides the `topkg` command line tool\nwhich helps with various aspects of a package's life cycle: creating\nand linting a distribution, releasing it on the WWW, publish its\ndocumentation, add it to the OCaml opam repository, etc.\n\nTopkg is distributed under the ISC license and has **no**\ndependencies. This is what your packages will need as a *build*\ndependency.\n\nTopkg-care is distributed under the ISC license it depends on\n[fmt][fmt], [logs][logs], [bos][bos], [cmdliner][cmdliner],\n[webbrowser][webbrowser] and `opam-format`.\n\n[fmt]: http://erratique.ch/software/fmt\n[logs]: http://erratique.ch/software/logs\n[bos]: http://erratique.ch/software/bos\n[cmdliner]: http://erratique.ch/software/cmdliner\n[webbrowser]: http://erratique.ch/software/webbrowser\"\"\"\nmaintainer: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nauthors: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nlicense: \"ISC\"\ntags: [\"packaging\" \"ocamlbuild\" \"org:erratique\"]\nhomepage: \"http://erratique.ch/software/topkg\"\ndoc: \"http://erratique.ch/software/topkg/doc\"\nbug-reports: \"https://github.com/dbuenzli/topkg/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.01.0\"}\n  \"ocamlfind\" {build & >= \"1.6.1\"}\n  \"ocamlbuild\"\n  \"result\"\n]\nbuild: [\n  \"ocaml\" \"pkg/pkg.ml\" \"build\" \"--pkg-name\" name \"--dev-pkg\" \"%{pinned}%\"\n]\ndev-repo: \"git+http://erratique.ch/repos/topkg.git\"\nurl {\n  src: \"http://erratique.ch/software/topkg/releases/topkg-1.0.0.tbz\"\n  checksum: \"md5=e3d76bda06bf68cb5853caf6627da603\"\n}",
           "override": null
         }
       },
@@ -315,25 +316,25 @@
       },
       "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.7.1" ]
     },
-    "@opam/rresult@opam:0.5.0": {
+    "@opam/rresult@opam:0.6.0": {
       "record": {
         "name": "@opam/rresult",
-        "version": "opam:0.5.0",
+        "version": "opam:0.6.0",
         "source":
-          "archive:http://erratique.ch/software/rresult/releases/rresult-0.5.0.tbz#md5:2aa904e5f1707903da68d80d71c85637",
+          "archive:http://erratique.ch/software/rresult/releases/rresult-0.6.0.tbz#md5:aba88cffa29081714468c2c7bcdf7fb1",
         "files": [],
         "opam": {
           "name": "rresult",
-          "version": "0.5.0",
+          "version": "0.6.0",
           "opam":
-            "opam-version: \"2.0\"\nname: \"rresult\"\nversion: \"0.5.0\"\nsynopsis: \"Result value combinators for OCaml\"\ndescription: \"\"\"\nRresult is an OCaml module for handling computation results and errors\nin an explicit and declarative manner, without resorting to\nexceptions. It defines combinators to operate on the `result` type\navailable from OCaml 4.03 in the standard library.\n\nRresult depends on the compatibility `result` package and is\ndistributed under the ISC license.\"\"\"\nmaintainer: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nauthors: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nlicense: \"ISC\"\ntags: [\"result\" \"error\" \"declarative\" \"org:erratique\"]\nhomepage: \"http://erratique.ch/software/rresult\"\ndoc: \"http://erratique.ch/software/rresult\"\nbug-reports: \"https://github.com/dbuenzli/rresult/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.01.0\"}\n  \"ocamlfind\" {build}\n  \"ocamlbuild\" {build}\n  \"topkg\" {build}\n  \"result\"\n]\nbuild: [\"ocaml\" \"pkg/pkg.ml\" \"build\" \"--pinned\" \"%{pinned}%\"]\ndev-repo: \"git+http://erratique.ch/repos/rresult.git\"\nurl {\n  src: \"http://erratique.ch/software/rresult/releases/rresult-0.5.0.tbz\"\n  checksum: \"md5=2aa904e5f1707903da68d80d71c85637\"\n}",
+            "opam-version: \"2.0\"\nname: \"rresult\"\nversion: \"0.6.0\"\nsynopsis: \"Result value combinators for OCaml\"\ndescription: \"\"\"\nRresult is an OCaml module for handling computation results and errors\nin an explicit and declarative manner, without resorting to\nexceptions. It defines combinators to operate on the `result` type\navailable from OCaml 4.03 in the standard library.\n\nRresult depends on the compatibility `result` package and is\ndistributed under the ISC license.\"\"\"\nmaintainer: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nauthors: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nlicense: \"ISC\"\ntags: [\"result\" \"error\" \"declarative\" \"org:erratique\"]\nhomepage: \"http://erratique.ch/software/rresult\"\ndoc: \"http://erratique.ch/software/rresult\"\nbug-reports: \"https://github.com/dbuenzli/rresult/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.01.0\"}\n  \"ocamlfind\" {build}\n  \"ocamlbuild\" {build}\n  \"topkg\" {build}\n  \"result\"\n]\nbuild: [\"ocaml\" \"pkg/pkg.ml\" \"build\" \"--pinned\" \"%{pinned}%\"]\ndev-repo: \"git+http://erratique.ch/repos/rresult.git\"\nurl {\n  src: \"http://erratique.ch/software/rresult/releases/rresult-0.6.0.tbz\"\n  checksum: \"md5=aba88cffa29081714468c2c7bcdf7fb1\"\n}",
           "override": null
         }
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
         "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3",
-        "@opam/topkg@opam:0.9.1", "ocaml@4.7.1"
+        "@opam/topkg@opam:1.0.0", "ocaml@4.7.1"
       ]
     },
     "@opam/result@opam:1.3": {
@@ -373,7 +374,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
-        "@opam/ocamlfind@opam:1.8.0", "@opam/topkg@opam:0.9.1", "ocaml@4.7.1"
+        "@opam/ocamlfind@opam:1.8.0", "@opam/topkg@opam:1.0.0", "ocaml@4.7.1"
       ]
     },
     "@opam/re@opam:1.8.0": {
@@ -706,15 +707,24 @@
         "ocaml@4.7.1"
       ]
     },
-    "@opam/mongo@github:anmonteiro/mongo#dunify": {
+    "@opam/mongo-lwt@github:anmonteiro/mongo:mongo-lwt.opam#dunify": {
       "record": {
-        "name": "@opam/mongo",
-        "version": "github:anmonteiro/mongo#dunify",
-        "source": "github:anmonteiro/mongo#dunify",
+        "name": "@opam/mongo-lwt",
+        "version": "github:anmonteiro/mongo:mongo-lwt.opam#dunify",
+        "source": "github:anmonteiro/mongo:mongo-lwt.opam#dunify",
         "files": [],
-        "opam": null
+        "opam": {
+          "name": "mongo-lwt",
+          "version": "dev",
+          "opam":
+            "opam-version: \"1.2\"\nname: \"mongo\"\nversion: \"0.67.2\"\nmaintainer: \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\nauthors: [\n  \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\n  \"Dr. Xinuo Chen <iamindcs@gmail.com>\"\n]\nlicense: \"MIT\"\ndepends: [\"bson\" \"lwt\"]\nbuild: [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\nrun-test: [\"dune\" \"runtest\" \"-p\" name \"-j\" jobs]",
+          "override": null
+        }
       },
-      "dependencies": []
+      "dependencies": [
+        "@esy-ocaml/substs@0.0.1",
+        "@opam/bson@github:gaelduplessix/bson#master", "@opam/lwt@opam:4.1.0"
+      ]
     },
     "@opam/merlin-extend@opam:0.3": {
       "record": {
@@ -869,7 +879,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
         "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3",
-        "@opam/topkg@opam:0.9.1", "ocaml@4.7.1"
+        "@opam/topkg@opam:1.0.0", "ocaml@4.7.1"
       ]
     },
     "@opam/lambda-term@opam:1.13": {
@@ -925,7 +935,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
-        "@opam/ocamlfind@opam:1.8.0", "@opam/topkg@opam:0.9.1",
+        "@opam/ocamlfind@opam:1.8.0", "@opam/topkg@opam:1.0.0",
         "@opam/uchar@opam:0.0.2", "@opam/uutf@opam:1.0.1", "ocaml@4.7.1"
       ]
     },
@@ -1048,7 +1058,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/graphql_parser@opam:0.7.0",
-        "@opam/jbuilder@opam:transition", "@opam/rresult@opam:0.5.0",
+        "@opam/jbuilder@opam:transition", "@opam/rresult@opam:0.6.0",
         "@opam/yojson@opam:1.4.1", "ocaml@4.7.1"
       ]
     },
@@ -1070,7 +1080,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
         "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3",
-        "@opam/topkg@opam:0.9.1", "@opam/uchar@opam:0.0.2", "ocaml@4.7.1"
+        "@opam/topkg@opam:1.0.0", "@opam/uchar@opam:0.0.2", "ocaml@4.7.1"
       ]
     },
     "@opam/fieldslib@opam:v0.11.0": {
@@ -1384,7 +1394,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
         "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3",
-        "@opam/topkg@opam:0.9.1", "ocaml@4.7.1"
+        "@opam/topkg@opam:1.0.0", "ocaml@4.7.1"
       ]
     },
     "@opam/camomile@opam:1.0.1": {
@@ -1407,26 +1417,15 @@
         "ocaml@4.7.1"
       ]
     },
-    "@opam/bson@github:gaelduplessix/bson:bson.opam#fix-object-id-decoding": {
+    "@opam/bson@github:gaelduplessix/bson#master": {
       "record": {
         "name": "@opam/bson",
-        "version":
-          "github:gaelduplessix/bson:bson.opam#fix-object-id-decoding",
-        "source":
-          "github:gaelduplessix/bson:bson.opam#fix-object-id-decoding",
+        "version": "github:gaelduplessix/bson#master",
+        "source": "github:gaelduplessix/bson#master",
         "files": [],
-        "opam": {
-          "name": "bson",
-          "version": "dev",
-          "opam":
-            "opam-version: \"1.2\"\nname: \"bson\"\nversion: \"0.89.3\"\nmaintainer: \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\nauthors: [\n  \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\n  \"Dr. Xinuo Chen <iamindcs@gmail.com>\"\n]\nlicense: \"MIT\"\ndepends: [\n  \"dune\" {build}\n  \"hex\"\n]\ndepopts: [\"deriving\"]\nbuild: [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\nrun-test: [\"dune\" \"runtest\" \"-p\" name \"-j\" jobs]",
-          "override": null
-        }
+        "opam": null
       },
-      "dependencies": [
-        "@esy-ocaml/substs@0.0.1", "@opam/dune@opam:1.4.0",
-        "@opam/hex@opam:1.2.0"
-      ]
+      "dependencies": []
     },
     "@opam/biniou@opam:1.2.0": {
       "record": {
@@ -1608,7 +1607,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/base-bytes@opam:base",
         "@opam/ocamlbuild@opam:0.12.0", "@opam/ocamlfind@opam:1.8.0",
-        "@opam/topkg@opam:0.9.1", "ocaml@4.7.1"
+        "@opam/topkg@opam:1.0.0", "ocaml@4.7.1"
       ]
     },
     "@opam/angstrom@opam:0.10.0": {
