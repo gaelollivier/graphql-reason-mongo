@@ -28,7 +28,7 @@
   "resolutions": {
     "@esy-ocaml/reason": "anmonteiro/reason#anmonteiro/dune-1.4",
     "@opam/mongo": "anmonteiro/mongo#dunify",
-    "@opam/bson": "anmonteiro/bson#dunify"
+    "@opam/bson": "gaelduplessix/bson:bson.opam#fix-object-id-decoding"
   },
   "devDependencies": {
     "@esy-ocaml/merlin": "*",

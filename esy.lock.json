@@ -1,5 +1,5 @@
 {
-  "hash": "5490136a1bd664badc39ae6f671ae56b",
+  "hash": "0fcd33611d6dfdb0647805301094571a",
   "root": "root@path:./package.json",
   "node": {
     "root@path:./package.json": {
@@ -13,10 +13,11 @@
       "dependencies": [
         "@esy-ocaml/merlin@3.0.5005",
         "@esy-ocaml/reason@github:anmonteiro/reason#anmonteiro/dune-1.4",
-        "@opam/bson@github:anmonteiro/bson#dunify", "@opam/dune@opam:1.4.0",
-        "@opam/graphql-lwt@opam:0.7.0", "@opam/lambda-term@opam:1.13",
-        "@opam/lwt@opam:4.1.0", "@opam/mongo@github:anmonteiro/mongo#dunify",
-        "ocaml@4.7.1", "refmterr@3.1.7"
+        "@opam/bson@github:gaelduplessix/bson:bson.opam#fix-object-id-decoding",
+        "@opam/dune@opam:1.4.0", "@opam/graphql-lwt@opam:0.7.0",
+        "@opam/lambda-term@opam:1.13", "@opam/lwt@opam:4.1.0",
+        "@opam/mongo@github:anmonteiro/mongo#dunify", "ocaml@4.7.1",
+        "refmterr@3.1.7"
       ]
     },
     "refmterr@3.1.7": {
@@ -967,6 +968,26 @@
         "@opam/sexplib@opam:v0.11.0", "ocaml@4.7.1"
       ]
     },
+    "@opam/hex@opam:1.2.0": {
+      "record": {
+        "name": "@opam/hex",
+        "version": "opam:1.2.0",
+        "source":
+          "archive:https://github.com/mirage/ocaml-hex/releases/download/v1.2.0/hex-1.2.0.tbz#md5:c957b225be3df3725eaee8a3032bc359",
+        "files": [],
+        "opam": {
+          "name": "hex",
+          "version": "1.2.0",
+          "opam":
+            "opam-version: \"2.0\"\nname: \"hex\"\nversion: \"1.2.0\"\nsynopsis: \"Minimal library providing hexadecimal converters.\"\ndescription: \"\"\"\n```ocaml\n#require \"hex\";;\n# Hex.of_string \"Hello world!\";;\n- : Hex.t = \"48656c6c6f20776f726c6421\"\n# Hex.to_string \"dead-beef\";;\n- : string = \"ޭ��\"\n# Hex.hexdump (Hex.of_string \"Hello world!\\\\n\")\n00000000: 4865 6c6c 6f20 776f 726c 6421 0a        Hello world!.\n- : unit = ()\n```\"\"\"\nmaintainer: \"thomas@gazagnaire.org\"\nauthors: [\"Thomas Gazagnaire\" \"Trevor Summers Smith\"]\nlicense: \"ISC\"\nhomepage: \"https://github.com/mirage/ocaml-hex\"\nbug-reports: \"https://github.com/mirage/ocaml-hex/issues\"\ndepends: [\n  \"ocaml\"\n  \"jbuilder\" {build & >= \"1.0+beta8\"}\n  \"cstruct\" {>= \"1.7.0\"}\n]\nbuild: [\n  [\"jbuilder\" \"subst\" \"-p\" name] {pinned}\n  [\"jbuilder\" \"build\" \"-p\" name \"-j\" jobs]\n  [\"jbuilder\" \"runtest\"] {with-test}\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-hex.git\"\nurl {\n  src:\n    \"https://github.com/mirage/ocaml-hex/releases/download/v1.2.0/hex-1.2.0.tbz\"\n  checksum: \"md5=c957b225be3df3725eaee8a3032bc359\"\n}",
+          "override": null
+        }
+      },
+      "dependencies": [
+        "@esy-ocaml/substs@0.0.1", "@opam/cstruct@opam:3.2.1",
+        "@opam/jbuilder@opam:transition", "ocaml@4.7.1"
+      ]
+    },
     "@opam/graphql_parser@opam:0.7.0": {
       "record": {
         "name": "@opam/graphql_parser",
@@ -1115,6 +1136,26 @@
         }
       },
       "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.7.1" ]
+    },
+    "@opam/cstruct@opam:3.2.1": {
+      "record": {
+        "name": "@opam/cstruct",
+        "version": "opam:3.2.1",
+        "source":
+          "archive:https://github.com/mirage/ocaml-cstruct/releases/download/v3.2.1/cstruct-3.2.1.tbz#md5:c1eb6a48f3d3b0b1e358f06a8c92a4c1",
+        "files": [],
+        "opam": {
+          "name": "cstruct",
+          "version": "3.2.1",
+          "opam":
+            "opam-version: \"2.0\"\nname: \"cstruct\"\nversion: \"3.2.1\"\nsynopsis: \"Access C-like structures directly from OCaml\"\ndescription: \"\"\"\nCstruct is a library and syntax extension to make it easier to access C-like\nstructures directly from OCaml.  It supports both reading and writing to these\nstructures, and they are accessed via the `Bigarray` module.\"\"\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\"\n  \"Richard Mortier\"\n  \"Thomas Gazagnaire\"\n  \"Pierre Chambart\"\n  \"David Kaloper\"\n  \"Jeremy Yallop\"\n  \"David Scott\"\n  \"Mindy Preston\"\n  \"Thomas Leonard\"\n]\nlicense: \"ISC\"\ntags: [\"org:mirage\" \"org:ocamllabs\"]\nhomepage: \"https://github.com/mirage/ocaml-cstruct\"\nbug-reports: \"https://github.com/mirage/ocaml-cstruct/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"jbuilder\" {build & >= \"1.0+beta10\"}\n  \"sexplib\"\n  \"ounit\" {with-test}\n]\nbuild: [\n  [\"jbuilder\" \"subst\" \"-p\" name \"--name\" name] {pinned}\n  [\"jbuilder\" \"build\" \"-p\" name \"-j\" jobs]\n  [\"jbuilder\" \"runtest\" \"-p\" name] {with-test}\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-cstruct.git\"\nurl {\n  src:\n    \"https://github.com/mirage/ocaml-cstruct/releases/download/v3.2.1/cstruct-3.2.1.tbz\"\n  checksum: \"md5=c1eb6a48f3d3b0b1e358f06a8c92a4c1\"\n}",
+          "override": null
+        }
+      },
+      "dependencies": [
+        "@esy-ocaml/substs@0.0.1", "@opam/jbuilder@opam:transition",
+        "@opam/sexplib@opam:v0.11.0", "ocaml@4.7.1"
+      ]
     },
     "@opam/crunch@opam:2.1.0": {
       "record": {
@@ -1366,15 +1407,26 @@
         "ocaml@4.7.1"
       ]
     },
-    "@opam/bson@github:anmonteiro/bson#dunify": {
+    "@opam/bson@github:gaelduplessix/bson:bson.opam#fix-object-id-decoding": {
       "record": {
         "name": "@opam/bson",
-        "version": "github:anmonteiro/bson#dunify",
-        "source": "github:anmonteiro/bson#dunify",
+        "version":
+          "github:gaelduplessix/bson:bson.opam#fix-object-id-decoding",
+        "source":
+          "github:gaelduplessix/bson:bson.opam#fix-object-id-decoding",
         "files": [],
-        "opam": null
+        "opam": {
+          "name": "bson",
+          "version": "dev",
+          "opam":
+            "opam-version: \"1.2\"\nname: \"bson\"\nversion: \"0.89.3\"\nmaintainer: \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\nauthors: [\n  \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\n  \"Dr. Xinuo Chen <iamindcs@gmail.com>\"\n]\nlicense: \"MIT\"\ndepends: [\n  \"dune\" {build}\n  \"hex\"\n]\ndepopts: [\"deriving\"]\nbuild: [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\nrun-test: [\"dune\" \"runtest\" \"-p\" name \"-j\" jobs]",
+          "override": null
+        }
       },
-      "dependencies": []
+      "dependencies": [
+        "@esy-ocaml/substs@0.0.1", "@opam/dune@opam:1.4.0",
+        "@opam/hex@opam:1.2.0"
+      ]
     },
     "@opam/biniou@opam:1.2.0": {
       "record": {
