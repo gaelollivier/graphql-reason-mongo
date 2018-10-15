@@ -16,23 +16,24 @@
   },
   "dependencies": {
     "ocaml": "4.7.1",
-    "@opam/dune": "*",
-    "@opam/lambda-term": "*",
-    "@opam/lwt": "*",
-    "@esy-ocaml/reason": "*",
     "refmterr": "*",
+    "@esy-ocaml/reason": "*",
+    "@opam/dune": "*",
+    "@opam/lwt": "*",
+    "@opam/lwt_ppx": "*",
     "@opam/graphql-lwt": "*",
+    "@opam/mongo": "*",
     "@opam/mongo-lwt": "*",
     "@opam/bson": "*",
     "@opam/hex": "*"
   },
   "resolutions": {
     "@esy-ocaml/reason": "anmonteiro/reason#anmonteiro/dune-1.4",
-    "@opam/mongo-lwt": "anmonteiro/mongo:mongo-lwt.opam#dunify",
-    "@opam/bson": "gaelduplessix/bson#master"
+    "@opam/mongo": "gaelduplessix/mongo:mongo.opam#master",
+    "@opam/mongo-lwt": "gaelduplessix/mongo:mongo-lwt.opam#624e16e",
+    "@opam/bson": "gaelduplessix/bson:bson.opam#master"
   },
   "devDependencies": {
-    "@esy-ocaml/merlin": "*",
-    "ocaml": "4.7.1"
+    "@esy-ocaml/merlin": "*"
   }
 }

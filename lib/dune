@@ -2,4 +2,6 @@
   (name lib)
   (flags (-w -40 -w +26))
   (public_name graphql-reason-mongo)
-  (libraries graphql graphql-lwt mongo-lwt hex))
+  (preprocess
+    (pps lwt_ppx))
+  (libraries lwt_ppx graphql graphql-lwt mongo mongo-lwt hex))
