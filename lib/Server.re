@@ -1,10 +1,20 @@
 open Graphql_lwt;
 
-type user = {
-  id: string,
-  email: string,
-  firstname: string,
-  lastname: string,
+module User = {
+  type t = {
+    id: string,
+    email: string,
+    firstname: string,
+    lastname: string,
+  };
+};
+
+module CreateUserInput = {
+  type t = {
+    email: string,
+    firstname: string,
+    lastname: string,
+  };
 };
 
 let connectAndStart = () => {
@@ -20,8 +30,9 @@ let connectAndStart = () => {
   let user =
     Schema.(
       obj("User", ~fields=user =>
-        [
-          field("id", ~args=Arg.[], ~typ=non_null(objectId), ~resolve=((), p) =>
+        User.[
+          field(
+            "id", ~args=Arg.[], ~typ=non_null(objectId), ~resolve=((), p) =>
             p.id
           ),
           field(
@@ -46,6 +57,56 @@ let connectAndStart = () => {
   let schema =
     Schema.(
       schema(
+        ~mutation_name="Mutation",
+        ~mutations=[
+          io_field(
+            "createUser",
+            ~args=
+              Arg.[
+                arg(
+                  ~typ=
+                    non_null(
+                      obj(
+                        "CreateUserInput",
+                        ~fields=[
+                          arg("email", ~typ=non_null(string)),
+                          arg("firstname", ~typ=non_null(string)),
+                          arg("lastname", ~typ=non_null(string)),
+                        ],
+                        ~coerce=(email, firstname, lastname) =>
+                        CreateUserInput.{email, firstname, lastname}
+                      ),
+                    ),
+                  "input",
+                ),
+              ],
+            ~typ=non_null(list(non_null(user))),
+            /* users resolver */
+            ~resolve=((), (), input) => {
+              print_endline("HERE!");
+              print_endline(input.email);
+              print_endline(input.firstname);
+              print_endline(input.lastname);
+              /* TODO: create & insert doc :) */
+              let%lwt res = Mongo_lwt.find(usersCollection);
+              let docs =
+                res
+                |> MongoReply.get_document_list
+                |> List.map(doc =>
+                     User.{
+                       id: Bson.get_element("_id", doc) |> Bson.get_objectId,
+                       email:
+                         Bson.get_element("email", doc) |> Bson.get_string,
+                       firstname:
+                         Bson.get_element("firstname", doc) |> Bson.get_string,
+                       lastname:
+                         Bson.get_element("lastname", doc) |> Bson.get_string,
+                     }
+                   );
+              Lwt.return_ok(docs);
+            },
+          ),
+        ],
         ~query_name="Query",
         [
           /* Query fields */
@@ -64,7 +125,7 @@ let connectAndStart = () => {
                        doc
                        |> Bson.get_element("profile")
                        |> Bson.get_doc_element;
-                     {
+                     User.{
                        id: Bson.get_element("_id", doc) |> Bson.get_objectId,
                        email:
                          Bson.get_element("email", doc) |> Bson.get_string,
