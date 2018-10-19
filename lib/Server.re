@@ -1,4 +1,5 @@
 open Graphql_lwt;
+open ReMongo;
 
 module User = {
   type t = {

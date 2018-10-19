@@ -1,5 +1,5 @@
 {
-  "hash": "2c00a4e09737fab7a5cb4cd08c616ac4",
+  "hash": "a2791a45dec00c2d10a20306c197fb1f",
   "root": "root@path:./package.json",
   "node": {
     "root@path:./package.json": {
@@ -13,13 +13,10 @@
       "dependencies": [
         "@esy-ocaml/merlin@3.0.5005",
         "@esy-ocaml/reason@github:anmonteiro/reason#anmonteiro/dune-1.4",
-        "@opam/bson@github:gaelduplessix/bson:bson.opam#master",
         "@opam/dune@opam:1.4.0", "@opam/graphql-lwt@opam:0.7.0",
         "@opam/hex@opam:1.2.0", "@opam/lwt@opam:4.1.0",
-        "@opam/lwt_ppx@opam:1.2.1",
-        "@opam/mongo@github:gaelduplessix/mongo:mongo.opam#master",
-        "@opam/mongo-lwt@github:gaelduplessix/mongo:mongo-lwt.opam#624e16e",
-        "ocaml@4.7.1", "refmterr@3.1.7"
+        "@opam/lwt_ppx@opam:1.2.1", "ocaml@4.7.1",
+        "re-mongo@github:gaelduplessix/re-mongo#master", "refmterr@3.1.7"
       ]
     },
     "refmterr@3.1.7": {
@@ -34,6 +31,20 @@
       "dependencies": [
         "@esy-ocaml/reason@github:anmonteiro/reason#anmonteiro/dune-1.4",
         "@opam/jbuilder@opam:transition", "@opam/re@opam:1.8.0"
+      ]
+    },
+    "re-mongo@github:gaelduplessix/re-mongo#master": {
+      "record": {
+        "name": "re-mongo",
+        "version": "github:gaelduplessix/re-mongo#master",
+        "source": "github:gaelduplessix/re-mongo#master",
+        "files": [],
+        "opam": null
+      },
+      "dependencies": [
+        "@esy-ocaml/reason@github:anmonteiro/reason#anmonteiro/dune-1.4",
+        "@opam/dune@opam:1.4.0", "@opam/lwt@opam:4.1.0",
+        "@opam/lwt_ppx@opam:1.2.1", "ocaml@4.7.1", "refmterr@3.1.7"
       ]
     },
     "ocaml@4.7.1": {
@@ -728,46 +739,6 @@
         "ocaml@4.7.1"
       ]
     },
-    "@opam/mongo-lwt@github:gaelduplessix/mongo:mongo-lwt.opam#624e16e": {
-      "record": {
-        "name": "@opam/mongo-lwt",
-        "version": "github:gaelduplessix/mongo:mongo-lwt.opam#624e16e",
-        "source": "github:gaelduplessix/mongo:mongo-lwt.opam#624e16e",
-        "files": [],
-        "opam": {
-          "name": "mongo-lwt",
-          "version": "dev",
-          "opam":
-            "opam-version: \"1.2\"\nname: \"mongo-lwt\"\nversion: \"0.67.2\"\nmaintainer: \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\nauthors: [\n  \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\n  \"Dr. Xinuo Chen <iamindcs@gmail.com>\"\n]\nlicense: \"MIT\"\ndepends: [\"mongo\" \"bson\" \"lwt\" \"lwt_ppx\"]\nbuild: [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\nrun-test: [\"dune\" \"runtest\" \"-p\" name \"-j\" jobs]",
-          "override": null
-        }
-      },
-      "dependencies": [
-        "@esy-ocaml/substs@0.0.1",
-        "@opam/bson@github:gaelduplessix/bson:bson.opam#master",
-        "@opam/lwt@opam:4.1.0", "@opam/lwt_ppx@opam:1.2.1",
-        "@opam/mongo@github:gaelduplessix/mongo:mongo.opam#master"
-      ]
-    },
-    "@opam/mongo@github:gaelduplessix/mongo:mongo.opam#master": {
-      "record": {
-        "name": "@opam/mongo",
-        "version": "github:gaelduplessix/mongo:mongo.opam#master",
-        "source": "github:gaelduplessix/mongo:mongo.opam#master",
-        "files": [],
-        "opam": {
-          "name": "mongo",
-          "version": "dev",
-          "opam":
-            "opam-version: \"1.2\"\nname: \"mongo\"\nversion: \"0.67.2\"\nmaintainer: \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\nauthors: [\n  \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\n  \"Dr. Xinuo Chen <iamindcs@gmail.com>\"\n]\nlicense: \"MIT\"\ndepends: [\"bson\"]\nbuild: [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\nrun-test: [\"dune\" \"runtest\" \"-p\" name \"-j\" jobs]",
-          "override": null
-        }
-      },
-      "dependencies": [
-        "@esy-ocaml/substs@0.0.1",
-        "@opam/bson@github:gaelduplessix/bson:bson.opam#master"
-      ]
-    },
     "@opam/merlin-extend@opam:0.3": {
       "record": {
         "name": "@opam/merlin-extend",
@@ -1302,69 +1273,69 @@
       },
       "dependencies": [ "@esy-ocaml/substs@0.0.1" ]
     },
-    "@opam/conduit-lwt-unix@opam:1.2.0": {
+    "@opam/conduit-lwt-unix@opam:1.3.0": {
       "record": {
         "name": "@opam/conduit-lwt-unix",
-        "version": "opam:1.2.0",
+        "version": "opam:1.3.0",
         "source":
-          "archive:https://github.com/mirage/ocaml-conduit/releases/download/v1.2.0/conduit-1.2.0.tbz#md5:fe5f619935ba765619e1854e5ee2e4a5",
+          "archive:https://github.com/mirage/ocaml-conduit/releases/download/v1.3.0/conduit-v1.3.0.tbz#md5:df1c271a56537f8176eba811ab40ec19",
         "files": [],
         "opam": {
           "name": "conduit-lwt-unix",
-          "version": "1.2.0",
+          "version": "1.3.0",
           "opam":
-            "opam-version: \"2.0\"\nname: \"conduit-lwt-unix\"\nversion: \"1.2.0\"\nsynopsis: \"An OCaml network connection establishment library\"\ndescription: \"\"\"\n[![Build Status](https://travis-ci.org/mirage/ocaml-conduit.svg?branch=master)](https://travis-ci.org/mirage/ocaml-conduit)\n\nThe `conduit` library takes care of establishing and listening for \nTCP and SSL/TLS connections for the Lwt and Async libraries.\n\nThe reason this library exists is to provide a degree of abstraction\nfrom the precise SSL library used, since there are a variety of ways\nto bind to a library (e.g. the C FFI, or the Ctypes library), as well\nas well as which library is used (just OpenSSL for now).\n\nBy default, OpenSSL is used as the preferred connection library, but\nyou can force the use of the pure OCaml TLS stack by setting the\nenvironment variable `CONDUIT_TLS=native` when starting your program.\n\nThe opam packages available are:\n\n- `conduit`: the main `Conduit` module\n- `conduit-lwt`: the portable Lwt implementation\n- `conduit-lwt-unix`: the Lwt/Unix implementation\n- `conduit-async` the Jane Street Async implementation\n- `mirage-conduit`: the MirageOS compatible implementation\n\n### Debugging\n\nSome of the `Lwt_unix`-based modules use a non-empty `CONDUIT_DEBUG`\nenvironment variable to output debugging information to standard error.\nJust set this variable when running the program to see what URIs\nare being resolved to.\n\n### Further Informartion\n\n* **API Docs:** http://docs.mirage.io/\n* **WWW:** https://github.com/mirage/ocaml-conduit\n* **E-mail:** <mirageos-devel@lists.xenproject.org>\n* **Bugs:** https://github.com/mirage/ocaml-conduit/issues\"\"\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\" \"Thomas Leonard\" \"Thomas Gazagnaire\" \"Rudi Grinberg\"\n]\nlicense: \"ISC\"\ntags: \"org:mirage\"\nhomepage: \"https://github.com/mirage/ocaml-conduit\"\nbug-reports: \"https://github.com/mirage/ocaml-conduit/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"base-unix\"\n  \"jbuilder\" {build & >= \"1.0+beta9\"}\n  \"ppx_sexp_conv\"\n  \"conduit-lwt\"\n  \"lwt\" {>= \"3.0.0\"}\n  \"uri\" {>= \"1.9.4\"}\n  \"ipaddr\" {>= \"2.8.0\"}\n]\ndepopts: [\"tls\" \"lwt_ssl\" \"launchd\"]\nconflicts: [\n  \"tls\" {< \"0.8.0\"}\n]\nbuild: [\n  [\"jbuilder\" \"subst\" \"-n\" name] {pinned}\n  [\"jbuilder\" \"build\" \"-p\" name \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-conduit.git\"\nurl {\n  src:\n    \"https://github.com/mirage/ocaml-conduit/releases/download/v1.2.0/conduit-1.2.0.tbz\"\n  checksum: \"md5=fe5f619935ba765619e1854e5ee2e4a5\"\n}",
+            "opam-version: \"2.0\"\nname: \"conduit-lwt-unix\"\nversion: \"1.3.0\"\nsynopsis: \"An OCaml network connection establishment library\"\ndescription: \"\"\"\n[![Build Status](https://travis-ci.org/mirage/ocaml-conduit.svg?branch=master)](https://travis-ci.org/mirage/ocaml-conduit)\n\nThe `conduit` library takes care of establishing and listening for \nTCP and SSL/TLS connections for the Lwt and Async libraries.\n\nThe reason this library exists is to provide a degree of abstraction\nfrom the precise SSL library used, since there are a variety of ways\nto bind to a library (e.g. the C FFI, or the Ctypes library), as well\nas well as which library is used (just OpenSSL for now).\n\nBy default, OpenSSL is used as the preferred connection library, but\nyou can force the use of the pure OCaml TLS stack by setting the\nenvironment variable `CONDUIT_TLS=native` when starting your program.\n\nThe opam packages available are:\n\n- `conduit`: the main `Conduit` module\n- `conduit-lwt`: the portable Lwt implementation\n- `conduit-lwt-unix`: the Lwt/Unix implementation\n- `conduit-async` the Jane Street Async implementation\n- `mirage-conduit`: the MirageOS compatible implementation\n\n### Debugging\n\nSome of the `Lwt_unix`-based modules use a non-empty `CONDUIT_DEBUG`\nenvironment variable to output debugging information to standard error.\nJust set this variable when running the program to see what URIs\nare being resolved to.\n\n### Further Informartion\n\n* **API Docs:** http://docs.mirage.io/\n* **WWW:** https://github.com/mirage/ocaml-conduit\n* **E-mail:** <mirageos-devel@lists.xenproject.org>\n* **Bugs:** https://github.com/mirage/ocaml-conduit/issues\"\"\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\" \"Thomas Leonard\" \"Thomas Gazagnaire\" \"Rudi Grinberg\"\n]\nlicense: \"ISC\"\ntags: \"org:mirage\"\nhomepage: \"https://github.com/mirage/ocaml-conduit\"\nbug-reports: \"https://github.com/mirage/ocaml-conduit/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"dune\" {build}\n  \"base-unix\"\n  \"ppx_sexp_conv\"\n  \"conduit-lwt\" {>= \"1.3.0\"}\n  \"lwt\" {>= \"3.0.0\"}\n  \"uri\" {>= \"1.9.4\"}\n  \"ipaddr\" {>= \"2.8.0\"}\n]\ndepopts: [\"tls\" \"lwt_ssl\" \"launchd\"]\nconflicts: [\n  \"tls\" {< \"0.8.0\"}\n]\nbuild: [\n  [\"dune\" \"subst\"] {pinned}\n  [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-conduit.git\"\nurl {\n  src:\n    \"https://github.com/mirage/ocaml-conduit/releases/download/v1.3.0/conduit-v1.3.0.tbz\"\n  checksum: \"md5=df1c271a56537f8176eba811ab40ec19\"\n}",
           "override": null
         }
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/base-unix@opam:base",
-        "@opam/conduit-lwt@opam:1.1.0", "@opam/ipaddr@opam:2.8.0",
-        "@opam/jbuilder@opam:transition", "@opam/lwt@opam:4.1.0",
+        "@opam/conduit-lwt@opam:1.3.0", "@opam/dune@opam:1.4.0",
+        "@opam/ipaddr@opam:2.8.0", "@opam/lwt@opam:4.1.0",
         "@opam/ppx_sexp_conv@opam:v0.11.2", "@opam/uri@opam:1.9.7",
         "ocaml@4.7.1"
       ]
     },
-    "@opam/conduit-lwt@opam:1.1.0": {
+    "@opam/conduit-lwt@opam:1.3.0": {
       "record": {
         "name": "@opam/conduit-lwt",
-        "version": "opam:1.1.0",
+        "version": "opam:1.3.0",
         "source":
-          "archive:https://github.com/mirage/ocaml-conduit/releases/download/v1.1.0/conduit-1.1.0.tbz#md5:eb1d02c80d06ef812d97dc1ab588b597",
+          "archive:https://github.com/mirage/ocaml-conduit/releases/download/v1.3.0/conduit-v1.3.0.tbz#md5:df1c271a56537f8176eba811ab40ec19",
         "files": [],
         "opam": {
           "name": "conduit-lwt",
-          "version": "1.1.0",
+          "version": "1.3.0",
           "opam":
-            "opam-version: \"2.0\"\nname: \"conduit-lwt\"\nversion: \"1.1.0\"\nsynopsis: \"An OCaml network connection establishment library\"\ndescription: \"\"\"\n[![Build Status](https://travis-ci.org/mirage/ocaml-conduit.svg?branch=master)](https://travis-ci.org/mirage/ocaml-conduit)\n\nThe `conduit` library takes care of establishing and listening for \nTCP and SSL/TLS connections for the Lwt and Async libraries.\n\nThe reason this library exists is to provide a degree of abstraction\nfrom the precise SSL library used, since there are a variety of ways\nto bind to a library (e.g. the C FFI, or the Ctypes library), as well\nas well as which library is used (just OpenSSL for now).\n\nBy default, OpenSSL is used as the preferred connection library, but\nyou can force the use of the pure OCaml TLS stack by setting the\nenvironment variable `CONDUIT_TLS=native` when starting your program.\n\nThe opam packages available are:\n\n- `conduit`: the main `Conduit` module\n- `conduit-lwt`: the portable Lwt implementation\n- `conduit-lwt-unix`: the Lwt/Unix implementation\n- `conduit-async` the Jane Street Async implementation\n- `mirage-conduit`: the MirageOS compatible implementation\n\n### Debugging\n\nSome of the `Lwt_unix`-based modules use a non-empty `CONDUIT_DEBUG`\nenvironment variable to output debugging information to standard error.\nJust set this variable when running the program to see what URIs\nare being resolved to.\n\n### Further Informartion\n\n* **API Docs:** http://docs.mirage.io/\n* **WWW:** https://github.com/mirage/ocaml-conduit\n* **E-mail:** <mirageos-devel@lists.xenproject.org>\n* **Bugs:** https://github.com/mirage/ocaml-conduit/issues\"\"\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\" \"Thomas Leonard\" \"Thomas Gazagnaire\" \"Rudi Grinberg\"\n]\nlicense: \"ISC\"\ntags: \"org:mirage\"\nhomepage: \"https://github.com/mirage/ocaml-conduit\"\nbug-reports: \"https://github.com/mirage/ocaml-conduit/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"base-unix\"\n  \"jbuilder\" {build & >= \"1.0+beta9\"}\n  \"ppx_sexp_conv\"\n  \"conduit\" {>= \"1.1.0\"}\n  \"lwt\" {>= \"3.0.0\"}\n]\nbuild: [\n  [\"jbuilder\" \"subst\" \"-p\" name \"--name\" name] {pinned}\n  [\"jbuilder\" \"build\" \"-p\" name \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-conduit.git\"\nurl {\n  src:\n    \"https://github.com/mirage/ocaml-conduit/releases/download/v1.1.0/conduit-1.1.0.tbz\"\n  checksum: \"md5=eb1d02c80d06ef812d97dc1ab588b597\"\n}",
+            "opam-version: \"2.0\"\nname: \"conduit-lwt\"\nversion: \"1.3.0\"\nsynopsis: \"An OCaml network connection establishment library\"\ndescription: \"\"\"\n[![Build Status](https://travis-ci.org/mirage/ocaml-conduit.svg?branch=master)](https://travis-ci.org/mirage/ocaml-conduit)\n\nThe `conduit` library takes care of establishing and listening for \nTCP and SSL/TLS connections for the Lwt and Async libraries.\n\nThe reason this library exists is to provide a degree of abstraction\nfrom the precise SSL library used, since there are a variety of ways\nto bind to a library (e.g. the C FFI, or the Ctypes library), as well\nas well as which library is used (just OpenSSL for now).\n\nBy default, OpenSSL is used as the preferred connection library, but\nyou can force the use of the pure OCaml TLS stack by setting the\nenvironment variable `CONDUIT_TLS=native` when starting your program.\n\nThe opam packages available are:\n\n- `conduit`: the main `Conduit` module\n- `conduit-lwt`: the portable Lwt implementation\n- `conduit-lwt-unix`: the Lwt/Unix implementation\n- `conduit-async` the Jane Street Async implementation\n- `mirage-conduit`: the MirageOS compatible implementation\n\n### Debugging\n\nSome of the `Lwt_unix`-based modules use a non-empty `CONDUIT_DEBUG`\nenvironment variable to output debugging information to standard error.\nJust set this variable when running the program to see what URIs\nare being resolved to.\n\n### Further Informartion\n\n* **API Docs:** http://docs.mirage.io/\n* **WWW:** https://github.com/mirage/ocaml-conduit\n* **E-mail:** <mirageos-devel@lists.xenproject.org>\n* **Bugs:** https://github.com/mirage/ocaml-conduit/issues\"\"\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\" \"Thomas Leonard\" \"Thomas Gazagnaire\" \"Rudi Grinberg\"\n]\nlicense: \"ISC\"\ntags: \"org:mirage\"\nhomepage: \"https://github.com/mirage/ocaml-conduit\"\nbug-reports: \"https://github.com/mirage/ocaml-conduit/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"dune\" {build}\n  \"base-unix\"\n  \"ppx_sexp_conv\"\n  \"sexplib\"\n  \"conduit\" {>= \"1.3.0\"}\n  \"lwt\" {>= \"3.0.0\"}\n]\nbuild: [\n  [\"dune\" \"subst\"] {pinned}\n  [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-conduit.git\"\nurl {\n  src:\n    \"https://github.com/mirage/ocaml-conduit/releases/download/v1.3.0/conduit-v1.3.0.tbz\"\n  checksum: \"md5=df1c271a56537f8176eba811ab40ec19\"\n}",
           "override": null
         }
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/base-unix@opam:base",
-        "@opam/conduit@opam:1.1.0", "@opam/jbuilder@opam:transition",
+        "@opam/conduit@opam:1.3.0", "@opam/dune@opam:1.4.0",
         "@opam/lwt@opam:4.1.0", "@opam/ppx_sexp_conv@opam:v0.11.2",
-        "ocaml@4.7.1"
+        "@opam/sexplib@opam:v0.11.0", "ocaml@4.7.1"
       ]
     },
-    "@opam/conduit@opam:1.1.0": {
+    "@opam/conduit@opam:1.3.0": {
       "record": {
         "name": "@opam/conduit",
-        "version": "opam:1.1.0",
+        "version": "opam:1.3.0",
         "source":
-          "archive:https://github.com/mirage/ocaml-conduit/releases/download/v1.1.0/conduit-1.1.0.tbz#md5:eb1d02c80d06ef812d97dc1ab588b597",
+          "archive:https://github.com/mirage/ocaml-conduit/releases/download/v1.3.0/conduit-v1.3.0.tbz#md5:df1c271a56537f8176eba811ab40ec19",
         "files": [],
         "opam": {
           "name": "conduit",
-          "version": "1.1.0",
+          "version": "1.3.0",
           "opam":
-            "opam-version: \"2.0\"\nname: \"conduit\"\nversion: \"1.1.0\"\nsynopsis: \"An OCaml network connection establishment library\"\ndescription: \"\"\"\n[![Build Status](https://travis-ci.org/mirage/ocaml-conduit.svg?branch=master)](https://travis-ci.org/mirage/ocaml-conduit)\n\nThe `conduit` library takes care of establishing and listening for \nTCP and SSL/TLS connections for the Lwt and Async libraries.\n\nThe reason this library exists is to provide a degree of abstraction\nfrom the precise SSL library used, since there are a variety of ways\nto bind to a library (e.g. the C FFI, or the Ctypes library), as well\nas well as which library is used (just OpenSSL for now).\n\nBy default, OpenSSL is used as the preferred connection library, but\nyou can force the use of the pure OCaml TLS stack by setting the\nenvironment variable `CONDUIT_TLS=native` when starting your program.\n\nThe opam packages available are:\n\n- `conduit`: the main `Conduit` module\n- `conduit-lwt`: the portable Lwt implementation\n- `conduit-lwt-unix`: the Lwt/Unix implementation\n- `conduit-async` the Jane Street Async implementation\n- `mirage-conduit`: the MirageOS compatible implementation\n\n### Debugging\n\nSome of the `Lwt_unix`-based modules use a non-empty `CONDUIT_DEBUG`\nenvironment variable to output debugging information to standard error.\nJust set this variable when running the program to see what URIs\nare being resolved to.\n\n### Further Informartion\n\n* **API Docs:** http://docs.mirage.io/\n* **WWW:** https://github.com/mirage/ocaml-conduit\n* **E-mail:** <mirageos-devel@lists.xenproject.org>\n* **Bugs:** https://github.com/mirage/ocaml-conduit/issues\"\"\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\" \"Thomas Leonard\" \"Thomas Gazagnaire\" \"Rudi Grinberg\"\n]\nlicense: \"ISC\"\ntags: \"org:mirage\"\nhomepage: \"https://github.com/mirage/ocaml-conduit\"\nbug-reports: \"https://github.com/mirage/ocaml-conduit/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"jbuilder\" {build & >= \"1.0+beta9\"}\n  \"ppx_sexp_conv\"\n  \"sexplib\"\n  \"astring\"\n  \"uri\"\n  \"result\"\n  \"logs\" {>= \"0.5.0\"}\n  \"ipaddr\" {>= \"2.5.0\"}\n]\nbuild: [\n  [\"jbuilder\" \"subst\" \"-p\" name \"--name\" name] {pinned}\n  [\"jbuilder\" \"build\" \"-p\" name \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-conduit.git\"\nurl {\n  src:\n    \"https://github.com/mirage/ocaml-conduit/releases/download/v1.1.0/conduit-1.1.0.tbz\"\n  checksum: \"md5=eb1d02c80d06ef812d97dc1ab588b597\"\n}",
+            "opam-version: \"2.0\"\nname: \"conduit\"\nversion: \"1.3.0\"\nsynopsis: \"An OCaml network connection establishment library\"\ndescription: \"\"\"\n[![Build Status](https://travis-ci.org/mirage/ocaml-conduit.svg?branch=master)](https://travis-ci.org/mirage/ocaml-conduit)\n\nThe `conduit` library takes care of establishing and listening for \nTCP and SSL/TLS connections for the Lwt and Async libraries.\n\nThe reason this library exists is to provide a degree of abstraction\nfrom the precise SSL library used, since there are a variety of ways\nto bind to a library (e.g. the C FFI, or the Ctypes library), as well\nas well as which library is used (just OpenSSL for now).\n\nBy default, OpenSSL is used as the preferred connection library, but\nyou can force the use of the pure OCaml TLS stack by setting the\nenvironment variable `CONDUIT_TLS=native` when starting your program.\n\nThe opam packages available are:\n\n- `conduit`: the main `Conduit` module\n- `conduit-lwt`: the portable Lwt implementation\n- `conduit-lwt-unix`: the Lwt/Unix implementation\n- `conduit-async` the Jane Street Async implementation\n- `mirage-conduit`: the MirageOS compatible implementation\n\n### Debugging\n\nSome of the `Lwt_unix`-based modules use a non-empty `CONDUIT_DEBUG`\nenvironment variable to output debugging information to standard error.\nJust set this variable when running the program to see what URIs\nare being resolved to.\n\n### Further Informartion\n\n* **API Docs:** http://docs.mirage.io/\n* **WWW:** https://github.com/mirage/ocaml-conduit\n* **E-mail:** <mirageos-devel@lists.xenproject.org>\n* **Bugs:** https://github.com/mirage/ocaml-conduit/issues\"\"\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\" \"Thomas Leonard\" \"Thomas Gazagnaire\" \"Rudi Grinberg\"\n]\nlicense: \"ISC\"\ntags: \"org:mirage\"\nhomepage: \"https://github.com/mirage/ocaml-conduit\"\ndoc: \"https://mirage.github.io/ocaml-conduit/\"\nbug-reports: \"https://github.com/mirage/ocaml-conduit/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"dune\" {build}\n  \"ppx_sexp_conv\"\n  \"sexplib\"\n  \"astring\"\n  \"uri\"\n  \"result\"\n  \"logs\" {>= \"0.5.0\"}\n  \"ipaddr\" {>= \"2.5.0\"}\n]\nbuild: [\n  [\"dune\" \"subst\"] {pinned}\n  [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-conduit.git\"\nurl {\n  src:\n    \"https://github.com/mirage/ocaml-conduit/releases/download/v1.3.0/conduit-v1.3.0.tbz\"\n  checksum: \"md5=df1c271a56537f8176eba811ab40ec19\"\n}",
           "override": null
         }
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/astring@opam:0.8.3",
-        "@opam/ipaddr@opam:2.8.0", "@opam/jbuilder@opam:transition",
+        "@opam/dune@opam:1.4.0", "@opam/ipaddr@opam:2.8.0",
         "@opam/logs@opam:0.6.2", "@opam/ppx_sexp_conv@opam:v0.11.2",
         "@opam/result@opam:1.3", "@opam/sexplib@opam:v0.11.0",
         "@opam/uri@opam:1.9.7", "ocaml@4.7.1"
@@ -1388,7 +1359,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/base-unix@opam:base",
         "@opam/cmdliner@opam:1.0.2", "@opam/cohttp-lwt@opam:1.1.1",
-        "@opam/conduit-lwt-unix@opam:1.2.0", "@opam/dune@opam:1.4.0",
+        "@opam/conduit-lwt-unix@opam:1.3.0", "@opam/dune@opam:1.4.0",
         "@opam/fmt@opam:0.8.5", "@opam/logs@opam:0.6.2",
         "@opam/lwt@opam:4.1.0", "@opam/magic-mime@opam:1.1.0", "ocaml@4.7.1"
       ]
@@ -1426,7 +1397,7 @@
           "name": "cohttp",
           "version": "1.1.1",
           "opam":
-            "opam-version: \"2.0\"\nname: \"cohttp\"\nversion: \"1.1.1\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\"\n  \"Stefano Zacchiroli\"\n  \"David Sheets\"\n  \"Thomas Gazagnaire\"\n  \"David Scott\"\n  \"Rudi Grinberg\"\n  \"Andy Ray\"\n]\nlicense: \"ISC\"\ntags: [\"org:mirage\" \"org:xapi-project\"]\nhomepage: \"https://github.com/mirage/ocaml-cohttp\"\nbug-reports: \"https://github.com/mirage/ocaml-cohttp/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"dune\" {build & >= \"1.1.0\"}\n  \"re\" {>= \"1.7.2\"}\n  \"uri\" {>= \"1.9.0\"}\n  \"fieldslib\"\n  \"sexplib\"\n  \"ppx_fields_conv\" {>= \"v0.9.0\"}\n  \"ppx_sexp_conv\" {>= \"v0.9.0\"}\n  \"stringext\"\n  \"base64\" {>= \"2.0.0\"}\n  \"fmt\" {with-test}\n  \"jsonm\" {build}\n  \"alcotest\" {with-test}\n]\nbuild: [\n  [\"dune\" \"subst\"] {pinned}\n  [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\n  [\"dune\" \"runtest\" \"-p\" name \"-j\" jobs] {with-test}\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-cohttp.git\"\nurl {\n  src: \"https://github.com/mirage/ocaml-cohttp/archive/v1.1.1.tar.gz\"\n  checksum: [\n    \"md5=8ad6bb9dffd346bd88e556fc3cffafae\"\n    \"sha512=a5f7275c22866d24aa8e81687f7bad52e75872d655816b514996335053b5a2de9cc34f68bd077ad4059ff16b6ed3e76c02ef7f7b2e699472e42689643ade89f1\"\n  ]\n}",
+            "opam-version: \"2.0\"\nname: \"cohttp\"\nversion: \"1.1.1\"\nmaintainer: \"anil@recoil.org\"\nauthors: [\n  \"Anil Madhavapeddy\"\n  \"Stefano Zacchiroli\"\n  \"David Sheets\"\n  \"Thomas Gazagnaire\"\n  \"David Scott\"\n  \"Rudi Grinberg\"\n  \"Andy Ray\"\n]\nlicense: \"ISC\"\ntags: [\"org:mirage\" \"org:xapi-project\"]\nhomepage: \"https://github.com/mirage/ocaml-cohttp\"\nbug-reports: \"https://github.com/mirage/ocaml-cohttp/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.03.0\"}\n  \"dune\" {build & >= \"1.1.0\"}\n  \"re\" {>= \"1.7.2\"}\n  \"uri\" {>= \"1.9.0\" & < \"2.0.0\"}\n  \"fieldslib\"\n  \"sexplib\"\n  \"ppx_fields_conv\" {>= \"v0.9.0\"}\n  \"ppx_sexp_conv\" {>= \"v0.9.0\"}\n  \"stringext\"\n  \"base64\" {>= \"2.0.0\"}\n  \"fmt\" {with-test}\n  \"jsonm\" {build}\n  \"alcotest\" {with-test}\n]\nbuild: [\n  [\"dune\" \"subst\"] {pinned}\n  [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\n  [\"dune\" \"runtest\" \"-p\" name \"-j\" jobs] {with-test}\n]\ndev-repo: \"git+https://github.com/mirage/ocaml-cohttp.git\"\nurl {\n  src: \"https://github.com/mirage/ocaml-cohttp/archive/v1.1.1.tar.gz\"\n  checksum: [\n    \"md5=8ad6bb9dffd346bd88e556fc3cffafae\"\n    \"sha512=a5f7275c22866d24aa8e81687f7bad52e75872d655816b514996335053b5a2de9cc34f68bd077ad4059ff16b6ed3e76c02ef7f7b2e699472e42689643ade89f1\"\n  ]\n}",
           "override": null
         }
       },
@@ -1479,22 +1450,6 @@
         "@esy-ocaml/substs@0.0.1", "@opam/jbuilder@opam:transition",
         "ocaml@4.7.1"
       ]
-    },
-    "@opam/bson@github:gaelduplessix/bson:bson.opam#master": {
-      "record": {
-        "name": "@opam/bson",
-        "version": "github:gaelduplessix/bson:bson.opam#master",
-        "source": "github:gaelduplessix/bson:bson.opam#master",
-        "files": [],
-        "opam": {
-          "name": "bson",
-          "version": "dev",
-          "opam":
-            "opam-version: \"1.2\"\nname: \"bson\"\nversion: \"0.89.3\"\nmaintainer: \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\nauthors: [\n  \"Marc Simon <marc.simon42@gmail.com> <twitter.com/marcsimon42>\"\n  \"Dr. Xinuo Chen <iamindcs@gmail.com>\"\n]\nlicense: \"MIT\"\ndepends: [\n  \"dune\" {build}\n]\ndepopts: [\"deriving\"]\nbuild: [\"dune\" \"build\" \"-p\" name \"-j\" jobs]\nrun-test: [\"dune\" \"runtest\" \"-p\" name \"-j\" jobs]",
-          "override": null
-        }
-      },
-      "dependencies": [ "@esy-ocaml/substs@0.0.1", "@opam/dune@opam:1.4.0" ]
     },
     "@opam/biniou@opam:1.2.0": {
       "record": {

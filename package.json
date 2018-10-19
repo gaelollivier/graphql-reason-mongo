@@ -22,16 +22,12 @@
     "@opam/lwt": "*",
     "@opam/lwt_ppx": "*",
     "@opam/graphql-lwt": "*",
-    "@opam/mongo": "*",
-    "@opam/mongo-lwt": "*",
-    "@opam/bson": "*",
+    "re-mongo": "*",
     "@opam/hex": "*"
   },
   "resolutions": {
     "@esy-ocaml/reason": "anmonteiro/reason#anmonteiro/dune-1.4",
-    "@opam/mongo": "gaelduplessix/mongo:mongo.opam#master",
-    "@opam/mongo-lwt": "gaelduplessix/mongo:mongo-lwt.opam#624e16e",
-    "@opam/bson": "gaelduplessix/bson:bson.opam#master"
+    "re-mongo": "gaelduplessix/re-mongo#master"
   },
   "devDependencies": {
     "@esy-ocaml/merlin": "*"
