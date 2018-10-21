@@ -18,3 +18,7 @@ Then open `http://localhost:8080/graphql` in a web browser, or query it with you
 ## Database
 
 Example assumes a MongoDB instance running on localhost with default port (`27017`). It uses the collection `users` in database `db`.
+
+## Note
+
+This example is very experimental, using lots of custom versions of dependencies with no guarantees of being maintained.
