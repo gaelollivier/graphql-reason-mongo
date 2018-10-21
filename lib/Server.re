@@ -19,32 +19,38 @@ module CreateUserInput = {
 };
 
 module CreateUserPayload = {
-  type t = {user: User.t};
+  type t = {user: Bson.t};
 };
 
 /* GraphQL Schema types */
 let objectId =
-  Schema.scalar(~doc="MongoDB object ID", "ObjectId", ~coerce=(id: string)
+  Schema.scalar(
+    ~doc="MongoDB object ID", "ObjectId", ~coerce=(id: ObjectId.t)
     /* format ObjectIDs as hexadecimal */
-    => `String(Hex.show(Hex.of_string(id))));
+    => `String(ObjectId.toString(id)));
 
 let user =
   Schema.(
     obj("User", ~fields=_ =>
       User.[
-        field("id", ~args=Arg.[], ~typ=non_null(objectId), ~resolve=((), u) =>
-          u.id
-        ),
-        field("email", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), u) =>
-          u.email
+        field(
+          "id", ~args=Arg.[], ~typ=non_null(objectId), ~resolve=((), doc) =>
+          Bson.getElement("_id", doc) |> Bson.getObjectId
         ),
         field(
-          "firstname", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), u) =>
-          u.firstname
+          "email", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), doc) =>
+          Bson.getElement("email", doc) |> Bson.getString
         ),
         field(
-          "lastname", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), u) =>
-          u.lastname
+          "firstname",
+          ~args=Arg.[],
+          ~typ=non_null(string),
+          ~resolve=((), doc) =>
+          Bson.getElement("firstname", doc) |> Bson.getString
+        ),
+        field(
+          "lastname", ~args=Arg.[], ~typ=non_null(string), ~resolve=((), doc) =>
+          Bson.getElement("lastname", doc) |> Bson.getString
         ),
       ]
     )
@@ -78,7 +84,7 @@ let createUserPayload =
 
 let connectAndStart = () => {
   /* connect to localhost Mongo db with default port */
-  let%lwt usersCollection = Mongo_lwt.create_local_default("db", "users");
+  let%lwt usersCollection = Mongo_lwt.createLocalDefault("db", "users");
 
   let schema =
     Schema.(
@@ -94,17 +100,14 @@ let connectAndStart = () => {
               let {email, firstname, lastname}: CreateUserInput.t = input;
               /* create & insert mongo doc */
               let newUserDoc =
-                Bson.empty
-                |> Bson.add_element("email", Bson.create_string(email))
-                |> Bson.add_element(
-                     "firstname",
-                     Bson.create_string(firstname),
-                   )
-                |> Bson.add_element("lastname", Bson.create_string(lastname));
+                Bson.fromElements([
+                  ("_id", Bson.createObjectId(ObjectId.generate())),
+                  ("email", Bson.createString(email)),
+                  ("firstname", Bson.createString(firstname)),
+                  ("lastname", Bson.createString(lastname)),
+                ]);
               let%lwt () = Mongo_lwt.insert(usersCollection, [newUserDoc]);
-              /* TODO: retrieve inserted id */
-              let newUser = User.{id: "", email, firstname, lastname};
-              Lwt.return_ok(CreateUserPayload.{user: newUser});
+              Lwt.return_ok(CreateUserPayload.{user: newUserDoc});
             },
           ),
         ],
@@ -118,20 +121,8 @@ let connectAndStart = () => {
             /* users resolver */
             ~resolve=((), ()) => {
               let%lwt res = Mongo_lwt.find(usersCollection);
-              let docs =
-                res
-                |> MongoReply.get_document_list
-                |> List.map(doc =>
-                     User.{
-                       id: Bson.get_element("_id", doc) |> Bson.get_objectId,
-                       email:
-                         Bson.get_element("email", doc) |> Bson.get_string,
-                       firstname:
-                         Bson.get_element("firstname", doc) |> Bson.get_string,
-                       lastname:
-                         Bson.get_element("lastname", doc) |> Bson.get_string,
-                     }
-                   );
+              let docs = res |> MongoReply.getDocumentList;
+
               Lwt.return_ok(docs);
             },
           ),

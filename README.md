@@ -13,7 +13,7 @@ esy build
 esy x Server
 ```
 
-Then connect using your prefered GraphQL client on: `http://localhost:8080/graphql`
+Then open `http://localhost:8080/graphql` in a web browser, or query it with your preferred GraphQL client.
 
 ## Database
 
