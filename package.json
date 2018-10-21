@@ -22,8 +22,7 @@
     "@opam/lwt": "*",
     "@opam/lwt_ppx": "*",
     "@opam/graphql-lwt": "*",
-    "re-mongo": "*",
-    "@opam/hex": "*"
+    "re-mongo": "*"
   },
   "resolutions": {
     "@esy-ocaml/reason": "anmonteiro/reason#anmonteiro/dune-1.4",

@@ -1,5 +1,5 @@
 {
-  "hash": "58473933714fbf63796ce2adaf5f08fe",
+  "hash": "dcc1a449394a1524910646ea36358260",
   "root": "root@path:./package.json",
   "node": {
     "root@path:./package.json": {
@@ -14,9 +14,8 @@
         "@esy-ocaml/merlin@3.0.5005",
         "@esy-ocaml/reason@github:anmonteiro/reason#anmonteiro/dune-1.4",
         "@opam/dune@opam:1.4.0", "@opam/graphql-lwt@opam:0.7.0",
-        "@opam/hex@opam:1.2.0", "@opam/lwt@opam:4.1.0",
-        "@opam/lwt_ppx@opam:1.2.1", "ocaml@4.7.1",
-        "re-mongo@github:gaelduplessix/re-mongo#f4f6b1c", "refmterr@3.1.7"
+        "@opam/lwt@opam:4.1.0", "@opam/lwt_ppx@opam:1.2.1", "ocaml@4.7.1",
+        "re-mongo@github:gaelduplessix/re-mongo#master", "refmterr@3.1.7"
       ]
     },
     "refmterr@3.1.7": {
@@ -33,11 +32,11 @@
         "@opam/jbuilder@opam:transition", "@opam/re@opam:1.8.0"
       ]
     },
-    "re-mongo@github:gaelduplessix/re-mongo#f4f6b1c": {
+    "re-mongo@github:gaelduplessix/re-mongo#master": {
       "record": {
         "name": "re-mongo",
-        "version": "github:gaelduplessix/re-mongo#f4f6b1c",
-        "source": "github:gaelduplessix/re-mongo#f4f6b1c",
+        "version": "github:gaelduplessix/re-mongo#master",
+        "source": "github:gaelduplessix/re-mongo#master",
         "files": [],
         "opam": null
       },

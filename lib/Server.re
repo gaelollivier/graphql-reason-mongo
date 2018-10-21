@@ -25,9 +25,9 @@ module CreateUserPayload = {
 /* GraphQL Schema types */
 let objectId =
   Schema.scalar(
-    ~doc="MongoDB object ID", "ObjectId", ~coerce=(id: ObjectId.t)
-    /* format ObjectIDs as hexadecimal */
-    => `String(ObjectId.toString(id)));
+    ~doc="MongoDB object ID", "ObjectId", ~coerce=(id: ObjectId.t) =>
+    `String(ObjectId.toString(id))
+  );
 
 let user =
   Schema.(
